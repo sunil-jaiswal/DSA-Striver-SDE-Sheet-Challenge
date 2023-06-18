@@ -1,0 +1,15 @@
+public class Solution 
+{
+	public static String reverseString(String s) 
+	{
+		
+		    String arr[] = s.split(" ");
+        StringBuilder sb = new StringBuilder();
+        for(int i = arr.length-1; i >=0; i--) {
+            sb.append(arr[i].trim());
+			      sb.append(" ");
+        }
+		
+    	  return sb.toString();
+	}
+}
