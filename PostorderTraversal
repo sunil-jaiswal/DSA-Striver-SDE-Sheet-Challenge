@@ -1,0 +1,16 @@
+public class Solution {
+    public static List < Integer > getPostOrderTraversal(TreeNode root) {
+    	List <Integer> ans = new ArrayList<>();
+        func(ans, root);
+        return ans;
+    }
+
+    private static void func(List <Integer> ans, TreeNode root){
+        if(root == null){
+            return;
+        }
+        func(ans, root.left);
+        func(ans, root.right);
+        ans.add(root.data);
+    }
+}
