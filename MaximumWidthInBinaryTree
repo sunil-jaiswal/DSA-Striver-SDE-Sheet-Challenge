@@ -1,0 +1,25 @@
+public class Solution {
+	public static int getMaxWidth(TreeNode root) {
+		if(root == null)
+			return 0;
+		Queue<TreeNode> q = new LinkedList<>();
+		int ans = 0;
+		q.add(root);
+		while(!q.isEmpty()){
+
+			int size = q.size();
+			ans = Math.max(ans, size);
+			for(int i = 0; i < size; i++){
+				TreeNode element = q.remove();
+				if(element.left != null){
+					q.add(element.left);
+				}
+				if(element.right != null){
+					q.add(element.right);
+				}
+			}
+
+		}
+		return ans;
+	}
+}
